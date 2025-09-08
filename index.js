@@ -130,5 +130,51 @@ const loadPlantsByCategory =(categoryName)=> {
 };
 
 
+// display plants
+const displayTrees = (trees) => {
+  treeContainer.innerHTML = "";
+  if (!trees || trees.length === 0) 
+  {
+    treeContainer.innerHTML = "<p class='text-center text-gray-500'>No plants available</p>";
+    return;
+
+  }
+
+  trees.forEach(tree => {
+    const card = document.createElement("div");
+    card.className = "border border-gray-300 p-3 rounded shadow bg-[#EDEDED] flex flex-col hover:shadow-lg";
+    const imgSrc = tree.image 
+    card.innerHTML = `
+      <div class="flex flex-col rounded-lg shadow p-2 hover:shadow-lg">
+        <img src="${imgSrc}" alt="${tree.name}" class="h-60 w-full rounded mb-3">
+        <h3 class="text-lg font-semibold cursor-pointer hover:text-green-700 mb-2">${tree.name}</h3>
+        <div class="text-sm text-gray-400 mb-4">
+          <p>${tree.description}</p>
+        </div>
+        <div class="flex justify-between items-center mb-3 px-1">
+          <span class="text-sm text-gray-600">${tree.category}</span>
+          <span class="font-bold text-green-800">৳ ${tree.price}</span>
+        </div>
+        <button class="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700 mt-auto cursor-pointer">Add to Cart</button>
+      </div>
+    `;
+
+    card.querySelector("button").addEventListener("click", () => addToCart(tree));
+
+    card.querySelector("h3").addEventListener("click", () => {
+      modalContainer.innerHTML = `
+        <h3 class="text-xl font-bold mb-2">${tree.name}</h3>
+        <img src="${imgSrc}" alt="${tree.name}" class="w-full h-60 rounded mb-4"/>
+        <p class="mb-2"><strong>Category:</strong> ${tree.category}</p>
+        <p class="mb-2"><strong>Price:</strong> ৳ ${tree.price}</p>
+        <p>${tree.description}</p>
+      `;
+      treeModal.showModal();
+    });
+
+    treeContainer.appendChild(card);
+  });
+};
+
 
 
