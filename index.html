@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Green Tree </title>
   <!-- daisyUI cdn -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css"/>
   <!-- tailwind cdn -->
@@ -33,7 +33,36 @@
     </style>
 </head>
 <body>
-    
+    <!-- nav section -->
+    <header>
+      <nav class="bg-green-800 text-white w-full">
+        <div class="px-20 py-4 flex flex-col md:flex-row items-center w-full">
+          <div
+            class="md:flex-1 flex justify-center md:justify-start text-2xl font-bold mb-3 md:mb-0"
+          >
+            🌴 Green Earth
+          </div>
+
+          <ul
+            class="md:flex-1 flex flex-row md:flex-row justify-center items-center gap-4 md:gap-6 mb-3 text-lg"
+          >
+            <li class="hover:text-yellow-400 cursor-pointer">About</li>
+            <li class="hover:text-yellow-400 cursor-pointer">Gallery</li>
+            <li class="hover:text-yellow-400 cursor-pointer text-sm md:text-lg">
+              Plant a Tree
+            </li>
+          </ul>
+          <div class="md:flex-1 flex justify-center md:justify-end">
+            <button
+              class="bg-yellow-400 text-green-800 font-bold rounded-2xl px-6 py-2 hover:bg-yellow-400 cursor-pointer"
+            >
+              Plant a Tree
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
 
 
     <script src="./index.js"></script>
