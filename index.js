@@ -47,3 +47,29 @@ const loadAllPlants = () => {
     });
 };
 
+
+
+
+
+
+// Load categories
+const loadCategories = () => {
+  showLoading(categoryContainer, "please wait  loading all categories....");
+  fetch("https://openapi.programming-hero.com/api/categories")
+    .then(res => res.json())
+    .then(data => {
+      if (data.categories) 
+      {
+        allCategories = data.categories;
+        displayCategories(allCategories);
+      }
+    
+    
+    })
+    .catch(err => {
+      console.log(err);
+      categoryContainer.innerHTML ="<p class='text-red-500'>Failed to load categories.</p>";
+    });
+
+  };
+
