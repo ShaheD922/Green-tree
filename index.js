@@ -177,4 +177,74 @@ const displayTrees = (trees) => {
 };
 
 
+// Cart
+const addToCart = (tree) => {
+  cart.push(tree);
+  displayCart();
+   showCartModal(`${tree.name} has been added to your cart`);
+};
+
+const removeFromCart = (idx) => {
+  cart.splice(idx, 1);
+  displayCart();
+};
+
+const displayCart = () => {
+  cartContainer.innerHTML = "";
+  let total = 0;
+  cart.forEach((item, idx) =>{
+    total += item.price;
+    const createDiv = document.createElement("div");
+    createDiv.className ="flex justify-between items-center mb-2";
+    createDiv.innerHTML = `
+      <span>${item.name}</span>
+      <span>${item.price}</span>
+      <button class="text-red-500 text-sm" data-index="${idx}">❌</button>
+    
+      `;
+    createDiv.querySelector("button").addEventListener("click", () => removeFromCart(idx));
+    cartContainer.appendChild(createDiv);
+  });
+  cartTotal.textContent =total;
+};
+
+
+// Created my cart modal
+const cartModal = document.createElement("dialog");
+cartModal.id = "cartModal";
+cartModal.className = "modal";
+cartModal.innerHTML = `
+  <div class="modal-box text-center">
+    <p id="cartModalMessage" class="text-lg font-semibold text-gray-700 mb-4"></p>
+    <div class="flex justify-center">
+      <form method="dialog">
+        <button class="btn bg-green-700 text-white">Done</button>
+      </form>
+    </div>
+  </div>
+
+
+
+`;
+document.body.appendChild(cartModal);
+const cartModalMessage = cartModal.querySelector("#cartModalMessage");
+const showCartModal = (message) => 
+{
+  cartModalMessage.textContent = message;
+  cartModal.showModal();
+};
+
+
+
+
+
+
+
+
+// initialize
+loadAllPlants();
+loadCategories();
+
+
+
 
