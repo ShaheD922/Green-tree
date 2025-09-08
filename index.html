@@ -63,6 +63,208 @@
       </nav>
     </header>
 
+<main>
+      <!-- plant tree grow future section -->
+      <section class="bg-[#CFF0DC] py-10 px-5">
+        <div class="flex items-center justify-between">
+          <div class="hidden md:flex justify-start">
+            <img src="./assets/hero-leaf1.png" alt="" />
+          </div>
+
+          <div class="text-left md:text-center md:px-5">
+            <h1 class="text-3xl w-full md:text-5xl font-bold mb-4 text-black">
+              Plant a Tree, Grow a Future
+            </h1>
+            <p class="mb-6 md:text-lg text-gray-700">
+              Join our mission to plant 1 million trees and make the Earth
+              greener for future generations.
+            </p>
+            <button
+              class="bg-yellow-400 hover:bg-yellow-500 text-green-800 font-bold px-6 py-3 rounded-xl cursor-pointer"
+            >
+              Get Involved
+            </button>
+          </div>
+
+          <div class="hidden md:flex justify-end">
+            <img src="./assets/hero-leaf2.png" alt="" />
+          </div>
+        </div>
+
+
+      </section>
+
+      <!-- Shop Section -->
+
+
+      <section class="max-w-7xl mx-auto px-5 my-16">
+        <h2 class="text-3xl font-bold mb-6 text-center md:text-left">
+          Choose Your Trees
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+          <!-- Categories -->
+          <div
+            class="bg-white p-4 rounded-lg shadow border border-gray-300 md:col-span-2"
+            id="categoryContainer"
+          ></div>
+
+          <!-- Tree Cards -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-6 md:col-span-8 "
+            id="treeContainer"
+          ></div>
+
+          <!-- Cart -->
+          <div
+            class="bg-white p-4 rounded border border-gray-300 md:col-span-2"
+          >
+            <h3 class="font-semibold text-xl mb-3">Your Cart</h3>
+            <div id="cartContainer"></div>
+            <div class="mt-4 font-bold">
+              <span class="">Total: $</span><span id="cartTotal">0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- my tree detail modal -->
+        <dialog id="tree-details-modal" class="modal">
+          <div class="modal-box">
+            <div id="modalContainer"></div>
+            <div class="modal-action">
+              <form method="dialog">
+                <button class="btn bg-green-800 text-white">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+           
+
+      
+
+      </section>
+
+      <!-- about the caampaign -->
+
+      <section class="max-w-6xl mx-auto px-4 py-30 rounded-xl">
+        <h1 class="text-center text-xl md:text-3xl font-semibold mb-8">
+          About the Campaign
+        </h1>
+
+        <div
+          class="bg-gray-100 rounded-2xl p-6 md:p-10 flex flex-col md:flex-row items-center gap-8"
+        >
+          <div class="w-full md:w-2/5 flex justify-center">
+            <img
+              src="./assets/about.png"
+              alt=""
+              class="rounded-lg shadow-none"
+            />
+          </div>
+
+          <div class="w-full md:w-2/5">
+            <p class="text-sm md:text-xl mb-4">
+              Green Earth is a global tree plantation initiative dedicated to
+              fighting climate change. Since our start, we’ve planted over
+              500,000 trees worldwide. By joining our campaign, you help restore
+              forests, create habitats for wildlife, and combat global warming.
+            </p>
+
+            <ul class="text-sm text-gray-400 md:text-sm">
+              <li>• Restoration of natural habitats</li>
+              <li>• Improvement of air quality</li>
+              <li>• Support for local communities</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- OUR Impact -->
+      <section class="bg-[#CFF0DC] py-12">
+        <div class="max-w-6xl mx-auto px-4">
+          <h1 class="text-center text-lg md:text-2xl mb-8 font-bold">
+            Our Impact
+          </h1>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div
+              class="bg-white rounded-xl p-6 text-center shadow-md cursor-pointer hover:bg-green-400"
+            >
+              <p
+                class="text-2xl md:text-3xl font-semibold cursor-pointer hover:bg-green-400"
+              >
+                500K+
+              </p>
+              <p class="text-xs md:text-sm text-gray-500 mt-2">Trees Planted</p>
+            </div>
+
+            <div
+              class="bg-white rounded-xl p-6 text-center shadow-md cursor-pointer hover:bg-green-400"
+            >
+              <p class="text-2xl md:text-3xl font-semibold">120+</p>
+              <p class="text-xs md:text-sm text-gray-500 mt-2">
+                Communities Involved
+              </p>
+            </div>
+
+            <div
+              class="bg-white rounded-xl p-6 text-center shadow-md cursor-pointer hover:bg-green-400"
+            >
+              <p class="text-2xl md:text-3xl font-semibold">30+</p>
+              <p class="text-xs md:text-sm text-gray-500 mt-2">
+                Countries Reached
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Plant a Tree Form -->
+
+      <section>
+        <section class="bg-[#166534] py-16">
+          <div class="max-w-3xl mx-auto bg-white p-6 rounded-2xl shadow">
+            <div class="">
+              <h2 class="text-2xl font-bold mb-4 text-center">
+                Plant a Tree Today
+              </h2>
+            </div>
+
+            <form id="plantForm" class="flex flex-col gap-4">
+              <input
+                class="border p-2 rounded w-full"
+                type="text"
+                name=""
+                placeholder="Your Name"
+                id=""
+              />
+
+              <input
+                class="border p-2 rounded w-full"
+                type="email"
+                name=""
+                placeholder="Enter Your Email"
+                id=""
+              />
+
+              <select class="border p-2 rounded w-full">
+                <option disabled selected>Number Of Trees</option>
+                <option>1 Tree = $5</option>
+                <option>5 Tree = $25</option>
+                <option>10 Tree = $50</option>
+              </select>
+
+              <button
+                type=""
+                class="bg-green-700 text-white px-4 py-2 rounded hover:bg-yellow-600 cursor-pointer"
+              >
+                Donate Now
+              </button>
+            </form>
+          </div>
+        </section>
+      </section>
+    </main>
 
 
     <script src="./index.js"></script>
