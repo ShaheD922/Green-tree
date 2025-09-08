@@ -195,11 +195,11 @@ const displayCart = () => {
   cart.forEach((item, idx) =>{
     total += item.price;
     const createDiv = document.createElement("div");
-    createDiv.className ="flex justify-between items-center mb-2";
+    createDiv.className =" p-1  rounded-xl bg-[#CFF0DC]  flex justify-between items-center mb-2";
     createDiv.innerHTML = `
-      <span>${item.name}</span>
-      <span>${item.price}</span>
-      <button class="text-red-500 text-sm" data-index="${idx}">❌</button>
+      <span class="font-bold text-sm" >${item.name}  </span>
+      <span class"font-bold"> $${item.price}</span>
+      <button class="text-red-500 text-sm ml-2" data-index="${idx}">❌</button>
     
       `;
     createDiv.querySelector("button").addEventListener("click", () => removeFromCart(idx));
