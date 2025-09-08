@@ -11,6 +11,15 @@ let allCategories = [];
 
 
 
+//Loading spinner
+const showLoading = (container, message) => {
+  container.innerHTML = `
+    <div class="flex flex-col justify-center items-center py-10">
+      <span class="loading loading-spinner loading-xl text-green-700"></span>
+      <p class="text-center text-gray-500 mt-3">${message}</p>
+    </div>
+  `;
+};
 
 
 
