@@ -106,3 +106,29 @@ categoryContainer.addEventListener("click", e => {
     loadPlantsByCategory(e.target.textContent);
   }
 });
+
+
+
+
+
+
+
+// Load plants by category
+const loadPlantsByCategory =(categoryName)=> {
+  showLoading(treeContainer, "please wait loading plants...");
+  const filtered = allPlants.filter(tree => tree.category === categoryName);
+  if (filtered.length > 0) 
+  {
+    displayTrees(filtered);
+  } 
+  else{
+    treeContainer.innerHTML = 
+    `<p class="text-center text-gray-500 py-10">No plants in this category</p>`;
+  }
+
+
+};
+
+
+
+
