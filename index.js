@@ -237,8 +237,13 @@ const showCartModal = (message) =>
 
 
 
+// form part 
 
-
+document.getElementById("plantForm").addEventListener("submit",(e) => {
+  e.preventDefault();
+  alert("Thank you! Your donate tree has been submitted");
+  e.target.reset();
+});
 
 
 // initialize
