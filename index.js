@@ -73,3 +73,36 @@ const loadCategories = () => {
 
   };
 
+
+// Display categories
+const displayCategories = (categories) => {
+  categoryContainer.innerHTML= "<h3 class='font-bold mb-3'>Categories</h3>";
+
+  categories.forEach(cat => {
+    const btn = document.createElement("button");
+    btn.textContent = cat.category_name;
+    btn.id = cat.id;
+    btn.className =
+      "block w-full text-left px-3 py-2 mb-2 rounded cursor-pointer text-white bg-green-600 hover:bg-green-800";
+    categoryContainer.appendChild(btn);
+  
+  });
+
+};
+
+//click Category 
+
+categoryContainer.addEventListener("click", e => {
+  if (e.target.tagName === "BUTTON") {
+    const allBtn = categoryContainer.querySelectorAll("button");
+    allBtn.forEach(b => {
+      b.classList.remove("bg-gray-800");
+      b.classList.add("bg-green-600", "hover:bg-green-800");
+    });
+
+    e.target.classList.remove("bg-green-600", "hover:bg-green-800");
+    e.target.classList.add("bg-gray-800");
+
+    loadPlantsByCategory(e.target.textContent);
+  }
+});
